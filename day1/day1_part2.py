@@ -1,3 +1,5 @@
+#Partie 2
+
 textInput = open("day1_input.txt", "r")
 numeric = "1234567890"
 somme = 0
@@ -10,6 +12,6 @@ for lign in textInput:
             liste_trois_max.sort()
         somme = 0 # on arrête de comter la somme
         continue
-    somme += int(lign) # else we add to the current sum
+    somme += int(lign) 
 
 print(sum(liste_trois_max))
