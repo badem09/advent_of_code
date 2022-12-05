@@ -17,10 +17,16 @@ for l in file_instructions:
     nb_to_move  = int(cut [1])
     col_from = int(cut [3]) - 1
     col_to = int(cut[5][0]) -1
-
+    x = []
     for _ in range(nb_to_move):
-        x = liste_stack[col_from].pop()
-        liste_stack[col_to].append(x)
+
+        x.append(liste_stack[col_from].pop())
+    x.reverse()
+    for e in x:
+        liste_stack[col_to].append(e)
+    x = []
+
+
 
 r = ""
 for e in liste_stack:
