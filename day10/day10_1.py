@@ -11,7 +11,7 @@ ctr = []
 for _ in range(6): #Obligé de faire des boucles sinon certaines listes pointent
     ligne_ctr = [] #vers le même endroit
     for _ in range(40):
-        ligne_ctr.append(".")
+        ligne_ctr.append(" ")
     ctr.append(ligne_ctr.copy())
 
 for i in range(len(liste)):
@@ -26,7 +26,7 @@ for i in range(len(liste)):
         sprite = list(range(x-1,x+2))
         for k in sprite:
             if k == ctr_j:
-                ctr[ctr_i][ctr_j] = "#"
+                ctr[ctr_i][ctr_j] = u"\u25A0"
 
         num_cylce += 1
         if num_cylce in [20, 60, 100, 140, 180, 220]:
