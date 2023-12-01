@@ -1,8 +1,10 @@
 import re
 
+#Partie 1
 input = open("input.txt", "r")
 star_1 = sum([int(x[0]+x[-1]) for x in [list(re.sub('\D', '', lign)) for lign in input] if len(x)>0])
 
+#Partie 2
 input = open("input.txt", "r")
 digits = {'one':'1', 'two':'2', 'three':'3', 'four':'4', 'five':'5', 'six':'6', 'seven':'7', 'eight':'8', 'nine':'9', "ten":'10'}
 
