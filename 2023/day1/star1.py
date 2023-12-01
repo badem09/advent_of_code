@@ -14,7 +14,7 @@ for l in input:
     for d in digits.keys():
         while d in l2:
             i = l2.find(d)
-            l2 = l2[:i+1] + digits[d] + l2[i+(len(d)-1):]
+            l2 = l2[:i+1] + digits[d] + l2[i+(len(d)-1):] # oneight ->1eight
     ligns_modif.append(l2)
             
 star_2 = sum([int(x[0]+x[-1]) for x in [list(re.sub('\D', '', lign)) for lign in ligns_modif]])
