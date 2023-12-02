@@ -1,4 +1,4 @@
-#https://adventofcode.com/2023/day/2
+# https://adventofcode.com/2023/day/2
 from functools import reduce
 
 input = open("input.txt", "r")
