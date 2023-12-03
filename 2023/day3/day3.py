@@ -1,3 +1,4 @@
+# https://adventofcode.com/2023/day/3
 import itertools
 
 list_input = [list(e.replace('\n', '')) for e in list(open('input.txt', 'r'))]
