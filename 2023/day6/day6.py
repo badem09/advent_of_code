@@ -29,7 +29,7 @@ def naive_approach(times,distances):
 wt1 = naive_approach(times, distances)
 print('star 1 : ', math.prod([len(e) for e in wt1]))
 
-def math_approach(time, distance):
+def semi_math_approach(time, distance):
     """
     The smart approach.
     Let lt be the lower (first) valid waiting time
@@ -56,3 +56,23 @@ end = time.time()
 nb_of_possibilities = (times2 -1) - (2 * (lt-1))
 print("star 2 :" , nb_of_possibilities)
 print("time of exec star 2 : " ,end - start)
+
+"""
+complete math approach would be :
+Let t_win be the minimal time to win the race
+Let wt be the waited time 
+Let t_rest be  t_win - t_rest
+Let v_wt be the speed gained from wt
+Let dt be the travelled distance
+
+We have :  
+            dt = v_wt * t_rest
+            dt = v_wt * (t_win - wt)
+            
+And : v_wt = wt so :
+            dt = wt * (t_min - wt)
+            dt = -wt**2 + wt*t_min
+            -wt**2 + wt_min -dt = 0
+            
+            dt ??? to continue  
+"""
