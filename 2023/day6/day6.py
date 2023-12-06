@@ -50,7 +50,7 @@ def semi_math_approach(time, distance):
     return lt
 
 start = time.time()
-lt = math_approach(times2, distances2)
+lt = semi_math_approach(times2, distances2)
 end = time.time()
 
 nb_of_possibilities = (times2 -1) - (2 * (lt-1))
