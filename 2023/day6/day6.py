@@ -72,7 +72,8 @@ We have :
 And : v_wt = wt so :
             dt = wt * (t_min - wt)
             dt = -wt**2 + wt*t_min
-            -wt**2 + wt_min -dt = 0
-            
-            dt ??? to continue  
+      (eq) -wt**2 + wt_min -dt = 0
+
+so the winning waiting-time interval is : ]r1,r2[
+r1, r2 being roots of eq
 """
