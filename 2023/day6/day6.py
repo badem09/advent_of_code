@@ -50,7 +50,7 @@ def semi_math_approach(time, distance):
     return lt
 
 start = time.time()
-lt = math_approach(times2, distances2)
+lt = semi_math_approach(times2, distances2)
 end = time.time()
 
 nb_of_possibilities = (times2 -1) - (2 * (lt-1))
@@ -72,7 +72,8 @@ We have :
 And : v_wt = wt so :
             dt = wt * (t_min - wt)
             dt = -wt**2 + wt*t_min
-            -wt**2 + wt_min -dt = 0
-            
-            dt ??? to continue  
+      (eq) -wt**2 + wt_min -dt = 0
+
+so the winning waiting-time interval is : ]r1,r2[
+r1, r2 being roots of eq
 """
