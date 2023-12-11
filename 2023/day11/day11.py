@@ -16,14 +16,22 @@ transposee = list(map(list, zip(*copy.deepcopy(grid))))
 print_grid(grid)
 print()
 expanded = copy.deepcopy(grid)
+index_to_expand = []
+k = 0
 for i in range(len(grid)):
-    if grid[i].count('.') == len(grid[i])-1:
-        expanded.insert(i,grid[i])
+    if grid[i].count('.') == len(grid[i]):
+        expanded.insert(k,grid[i])
+        k+=1
+    k+=1
 
 transposee_e = list(map(list, zip(*copy.deepcopy(expanded))))
+res = copy.deepcopy(transposee_e)
 
+k=0
 for i in range(len(transposee_e)):
-    if grid[i].count('.') == len(grid[i])-1:
-        transposee_e.insert(i,grid[i])
+    if transposee_e[i].count('.') == len(transposee_e[i]):
+        res.insert(k,transposee_e[i])
+        k += 1
+    k += 1
 
-print_grid(transposee_e)
+print_grid(res)
