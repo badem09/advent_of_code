@@ -1,37 +1,36 @@
 input_list = [e.replace('\n', '').split() for e in open('input.txt').readlines()]
 input_list = [[e[0], [int(x) for x in e[1].split(',')]] for e in input_list]
 
-def is_separated(str):
-    for e in str:
-        if str.count(e[0]) != len(str):
-            return False
-    return True
 
 def separate_by_records(str,records):
     res = []
     i = 0
+    marge = []
     for r in records:
+        stop_by_h = False
         if r + i < len(str):
             e= ''
             while str[i] == '.':
-                e+=str[i]
+                #e+=str[i]
                 i+=1
             e += str[i:i+r]
             j=0
             while str[r+j+i] == '#':
+                stop_by_h = True
                 e += str[r+j+i]
                 j+=1
             i += r+j
 
-            e += str[i]
+            e += '' if len(e)<r+1 else str[i]
+            #e+=str[i]
             i+=1
             res.append(e)
         else :
             res.append(str[i:])
     if len(str) > sum(len(e) for e in res):
-        print(i)
-        res += str[i:]
-    return res
+        marge = str[i:]
+        #res.append()
+    return res, marge
 
 
 
@@ -41,11 +40,20 @@ for l in input_list: # l = '?#?#?#?#?#?#?#? 1,3,1,6'
     #garder les nb pas present
     wl = l[0] #wl = [?#?#?#?#?#?#?#?]
     records = l[1]
-    wl = separate_by_records(wl,records)
-    print(sum(len(e) for e in wl), len(l[0]))
-    print(records,wl,l[0])
-    #print(records,wl)
-    #print([len([e for e in s if e in '?'])-r+1 for s,r in zip(wl,records)])
+    wl, marge = separate_by_records(wl,records)
+    print(l[0])
+
+    for i in range(len(wl)):
+        if wl[i].count('#') == records[i]:
+            print(wl[i], 'ok', records[i])
+            #n_possible == 1
+        if wl[i].count('#') < records[i]:
+            print(wl, records[i])
+            print([x for x in wl[i] if x !='.'])
+            print(len([x for x in wl[i] if x !='.']) - records[i]+1 )
+        print()
+
+
 
 
 
