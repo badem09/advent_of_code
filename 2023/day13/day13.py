@@ -22,19 +22,21 @@ def find_line(pattern):
                     return []
                 k += 1
             return i + 1
-
+    return []
 
 
 for pattern in input_l:
     res = find_line(pattern)
     if res == []:
         pattern = list(map(list, zip(*copy.deepcopy(pattern))))
+        #3e pattern trouve pas de left v
         res = find_line(pattern)
-        above_h.append(res)
-    else :
         left_v.append(res)
+    else :
+        above_h.append(res)
 
-print(above_h)
-print(left_v)
+print(sum([e for e in left_v if isinstance(e,int)]+[e*100 for e in above_h if isinstance(e,int)]))
+print(above_h, '\n',left_v)
+
 
 
