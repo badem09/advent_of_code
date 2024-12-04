@@ -6,8 +6,8 @@ word_ex = 'XMAS'
 def search_xmas1(lines, word, xmas_count=0):
     for i in range(len(lines)):
         for j in range(len(lines[0])):
-            if lines[i][j] == word_ex[0]:
-                for dx, dy in list(product([0,1,-1], [0,1,-1])):
+            if lines[i][j] == word_ex[0]: # if on a X
+                for dx, dy in list(product([0,1,-1], [0,1,-1])): # explore left / right / diagonals
                     if not dx == dy == 0:
                         for k in range(4): # take 4 next letters
                             ni = i+k*dy
